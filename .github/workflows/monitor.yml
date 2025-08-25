@@ -1,0 +1,4 @@
+steps:
+- name: Instalar dependências
+  run: pip install -r requirements.txt
+  

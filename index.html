@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiago Aggio - Consultoria em IA para Negócios</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Favicon (ícone da aba do navegador) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
 
     <style>
@@ -60,7 +57,6 @@
 </head>
 <body class="bg-slate-950 text-slate-300">
 
-    <!-- CABEÇALHO E NAVEGAÇÃO -->
     <header class="bg-slate-950/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-800">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-white">
@@ -76,7 +72,6 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800">
             <a href="#inicio" class="block py-3 px-6 text-center hover:bg-slate-800 transition-colors">Início</a>
             <a href="#servicos" class="block py-3 px-6 text-center hover:bg-slate-800 transition-colors">Serviços</a>
@@ -86,7 +81,6 @@
     </header>
 
     <main>
-        <!-- SEÇÃO INICIAL (HERO) -->
         <section id="inicio" class="min-h-screen flex items-center hero-robot-bg pt-20">
             <div class="container mx-auto px-6 text-center z-10">
                 <h1 class="text-4xl md:text-7xl font-black text-white leading-tight mb-4">
@@ -101,16 +95,13 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DE SERVIÇOS -->
         <section id="servicos" class="py-20 bg-slate-950 grid-pattern-bg fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-5xl font-bold text-white">Soluções de IA para o seu Negócio</h2>
                     <p class="text-slate-400 mt-4 text-lg">Tecnologia de ponta para resolver problemas reais.</p>
                 </div>
-                <!-- Grid com altura consistente para os cards -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Card 1: Agentes de IA -->
                     <div class="bg-slate-900/50 backdrop-blur-sm p-8 rounded-xl border border-slate-800 hover:border-indigo-500 hover:shadow-2xl hover:shadow-indigo-900/50 transition-all duration-300 flex flex-col">
                         <div class="bg-indigo-900/50 text-indigo-400 mb-6 w-16 h-16 rounded-lg flex items-center justify-center">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3m6-6h3m-3 6h3M6 12H3m6 6h.01M9 12h.01M12 12h.01M15 12h.01M12 9h.01M15 9h.01"></path></svg>
@@ -120,7 +111,6 @@
                             <p class="text-slate-400">Crio "funcionários virtuais" para automatizar tarefas, analisar dados e otimizar processos, liberando seu tempo para focar no crescimento do seu negócio.</p>
                         </div>
                     </div>
-                    <!-- Card 2: Chatbots Inteligentes -->
                     <div class="bg-slate-900/50 backdrop-blur-sm p-8 rounded-xl border border-slate-800 hover:border-indigo-500 hover:shadow-2xl hover:shadow-indigo-900/50 transition-all duration-300 flex flex-col">
                         <div class="bg-indigo-900/50 text-indigo-400 mb-6 w-16 h-16 rounded-lg flex items-center justify-center">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
@@ -130,7 +120,6 @@
                             <p class="text-slate-400">Ofereça atendimento ao cliente 24/7, qualifique leads e agende serviços automaticamente. Um chatbot que entende e resolve as necessidades dos seus clientes.</p>
                         </div>
                     </div>
-                    <!-- Card 3: Automação de Processos -->
                     <div class="bg-slate-900/50 backdrop-blur-sm p-8 rounded-xl border border-slate-800 hover:border-indigo-500 hover:shadow-2xl hover:shadow-indigo-900/50 transition-all duration-300 flex flex-col">
                         <div class="bg-indigo-900/50 text-indigo-400 mb-6 w-16 h-16 rounded-lg flex items-center justify-center">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -141,27 +130,20 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="flex flex-col items-center mt-12 text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">Converse com a Nossa Assistente Virtual</h3>
+                    <div class="w-full">
+                        <iframe src="https://procuradoria-da-mulher-cvj.onrender.com/" style="width: 100%; max-width: 800px; height: 600px; border: 1px solid #333; border-radius: 8px;"></iframe>
+                    </div>
+                </div>
             </div>
-            <section id="servicos" class="py-20 bg-slate-950 grid-pattern-bg fade-in-section">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold text-white">Soluções de IA para o seu Negócio</h2>
-            <p class="text-slate-400 mt-4 text-lg">Tecnologia de ponta para resolver problemas reais.</p>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
-
-        <div class="flex justify-center mt-12">
-            <iframe src="https://procuradoria-da-mulher-cvj.onrender.com/" style="width: 100%; max-width: 800px; height: 600px; border: 1px solid #333; border-radius: 8px;"></iframe>
-        </div>
         </section>
 
-        <!-- SEÇÃO SOBRE MIM -->
         <section id="sobre" class="py-20 bg-slate-900/50 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/3">
-                        <!-- A foto agora aponta para um arquivo local no seu projeto com a extensão .png -->
                         <img src="foto-perfil.png" 
                              alt="Foto de Thiago Aggio, consultor de IA" 
                              class="rounded-full w-64 h-64 md:w-80 md:h-80 mx-auto object-cover border-4 border-indigo-500 shadow-2xl shadow-indigo-900/60">
@@ -179,7 +161,6 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DE CONTATO -->
         <section id="contato" class="py-20 bg-slate-950 grid-pattern-bg fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -211,7 +192,6 @@
         </section>
     </main>
 
-    <!-- RODAPÉ -->
     <footer class="bg-slate-950 border-t border-slate-800">
         <div class="container mx-auto px-6 py-8 text-center text-slate-400">
             <p>&copy; 2025 Thiago Aggio. Todos os direitos reservados.</p>
@@ -228,21 +208,7 @@
         });
 
         // Lógica para animação de fade-in ao rolar
-        const sections = document.querySelectorAll('.fade-in-section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.1 });
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>  
-</body>
-</html>
 
 
 

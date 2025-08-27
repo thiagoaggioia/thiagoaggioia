@@ -218,9 +218,8 @@
         const PROXY_URL = "https://chatbox-proxy-ey6ztwvgc-thiagoaggioias-projects.vercel.app/api";
 
         async function getGeminiResponse(userMessage) {
-            if (!PROXY_URL || PROXY_URL === "URL_DO_SEU_SERVIDOR_PROXY_AQUI") {
-                addMessage("Desculpe, a conexão com a inteligência artificial não está configurada corretamente.", false);
-                return;
+            if (!PROXY_URL || PROXY_URL.includes("URL_DO_SEU_SERVIDOR_PROXY_AQUI")) {
+                return "Desculpe, a conexão com a inteligência artificial não está configurada corretamente.";
             }
 
             try {
@@ -280,19 +279,14 @@
             addMessage(message, true);
             userInput.value = '';
             
-            // Simula um "pensamento" antes de chamar a API
-            setTimeout(async () => {
-                const response = await getGeminiResponse(message);
-                addMessage(response, false);
-            }, 800);
+            const response = await getGeminiResponse(message);
+            addMessage(response, false);
         }
 
         async function sendQuickMessage(message) {
             addMessage(message, true);
-            setTimeout(async () => {
-                const response = await getGeminiResponse(message);
-                addMessage(response, false);
-            }, 800);
+            const response = await getGeminiResponse(message);
+            addMessage(response, false);
         }
 
         function handleKeyPress(event) {

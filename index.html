@@ -14,16 +14,21 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
 
     <style>
+        /* Estilo para a nova fonte Poppins */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #020617;
+            background-color: #020617; /* Fundo base ultra escuro */
         }
+        
+        /* Seção Hero com fundo de robôs realistas */
         .hero-robot-bg {
             background-image: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)), url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
+
+        /* Efeito de texto com gradiente azul-roxo e brilho neon */
         .gradient-text-glow {
             background: linear-gradient(90deg, #60a5fa, #a78bfa, #c084fc);
             -webkit-background-clip: text;
@@ -31,17 +36,23 @@
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 15px rgba(96, 165, 250, 0.3), 0 0 25px rgba(167, 139, 250, 0.2);
         }
+        
+        /* Efeito de texto com gradiente roxo-azul para o título do chatbot */
         .gradient-text-chatbot-title {
-            background: linear-gradient(90deg, #c084fc, #a78bfa, #60a5fa);
+            background: linear-gradient(90deg, #c084fc, #a78bfa, #60a5fa); /* Inverti a ordem para começar com roxo */
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 10px rgba(192, 132, 252, 0.4), 0 0 20px rgba(167, 139, 250, 0.3);
         }
+
+        /* Fundo com padrão de grade sutil */
         .grid-pattern-bg {
             background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
+        /* Classe para animações de fade-in ao rolar a página */
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -54,6 +65,7 @@
     </style>
 </head>
 <body class="bg-slate-950 text-slate-300">
+
     <header class="bg-slate-950/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-800">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-white">
@@ -135,7 +147,7 @@
                     <p class="text-slate-400 mb-6 max-w-2xl">
                         Em parceria com a Procuradoria da Mulher de Joinville/SC, apresentamos um chatbot especializado para oferecer apoio, informações e direcionamento em casos de violência doméstica.
                     </p>
-                    <a href="chatbot.html" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-900/50 inline-block">
+                    <a href="https://procuradoria-da-mulher-cvj.onrender.com/" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-900/50 inline-block">
                         Acesse a Assistente Virtual
                     </a>
                 </div>
@@ -225,7 +237,6 @@
     </script>    
 </body>
 </html>
-
 
 
 

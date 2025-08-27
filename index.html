@@ -62,6 +62,15 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ESTILO ESPECÍFICO PARA DISPOSITIVOS MÓVEIS (CHATBOT GRANDE) */
+        @media (max-width: 768px) {
+            .iframe-chatbot {
+                width: 100% !important;
+                height: 80vh !important; /* 80% da altura da tela */
+                max-width: none !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-300">
@@ -148,7 +157,7 @@
                         Em parceria com a Procuradoria da Mulher de Joinville/SC, apresentamos um chatbot especializado para oferecer apoio, informações e direcionamento em casos de violência doméstica.
                     </p>
                     <div class="w-full">
-                        <iframe src="https://procuradoria-da-mulher-cvj.onrender.com/" style="width: 100%; max-width: 800px; height: 600px; border: 1px solid #333; border-radius: 8px;"></iframe>
+                        <iframe src="https://procuradoria-da-mulher-cvj.onrender.com/" class="iframe-chatbot" style="width: 100%; max-width: 800px; height: 600px; border: 1px solid #333; border-radius: 8px;"></iframe>
                     </div>
                 </div>
             </div>
@@ -168,7 +177,7 @@
                             Minha jornada une o universo do Direito à vanguarda da tecnologia. Sou <strong class="text-indigo-400 font-semibold">formado em Direito com especialização em Direito Digital</strong>, o que me confere uma visão estratégica para implementar tecnologias de forma segura e eficiente.
                         </p>
                         <p class="text-slate-300 mb-4 text-lg">
-                            Como <strong class="text-indigo-400 font-semibold">freelancer, entusiasta de Inteligência Artificial e com inglês fluente</strong>, dedico-me a traduzir o potencial da IA em soluções práticas que impulsionam o comércio local. Minha missão é ajudar seu negócio a inovar, crescer e se destacar no mercado.
+                            Como <strong class="text-indigo-400 font-semibold">freelancer, entusiasta de Inteligência Artificial e com inglês fluente</strong>, dedico-me a traduzir o potencial da IA em soluções práticas que impulsionam o comércio local. Sua consultoria em tecnologia para o sucesso local. Minha missão é ajudar seu negócio a inovar, crescer e se destacar no mercado.
                         </p>
                     </div>
                 </div>
@@ -237,6 +246,7 @@
     </script>    
 </body>
 </html>
+
 
 
 

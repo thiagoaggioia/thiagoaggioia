@@ -5,68 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistente de Apoio - Thiago Aggio</title>
     
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* Estilos globais */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #020617;
             background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
             background-size: cover;
             background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            min-height: 100vh;
         }
-
-        /* Container principal do chatbot */
         .chatbot-container {
             width: 100%;
             max-width: 800px;
             height: 90vh;
             display: flex;
             flex-direction: column;
-            background-color: rgba(31, 41, 55, 0.7);
-            border-radius: 1rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            backdrop-filter: blur(8px);
-            overflow: hidden;
-            color: white;
         }
-        
-        /* Cabeçalho */
-        .header {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            background-color: rgb(17, 24, 39);
-            border-bottom: 1px solid rgb(55, 65, 81);
-        }
-
-        .header .icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 9999px;
-            background-color: #6366f1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-        }
-        
-        /* Área de chat */
-        .chat-area {
-            flex: 1;
-            padding: 1.5rem;
-            overflow-y: auto;
-            background-color: rgb(17, 24, 39);
-        }
-
         .chat-area::-webkit-scrollbar {
             width: 8px;
         }
@@ -77,97 +35,6 @@
         .chat-area::-webkit-scrollbar-track {
             background-color: #2d3748;
         }
-        
-        /* Mensagens */
-        .message-row {
-            display: flex;
-            margin-bottom: 1rem;
-        }
-
-        .message-content {
-            padding: 1rem;
-            border-radius: 0.75rem;
-            max-width: 80%;
-            word-wrap: break-word;
-        }
-
-        .bot-message-row {
-            justify-content: flex-start;
-        }
-        .bot-message-content {
-            background-color: rgb(55, 65, 81);
-            border-bottom-left-radius: 0;
-        }
-        
-        .user-message-row {
-            justify-content: flex-end;
-        }
-        .user-message-content {
-            background-color: #6366f1;
-            border-bottom-right-radius: 0;
-            color: white;
-        }
-
-        /* Opções rápidas */
-        .quick-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            padding: 1rem;
-            background-color: rgb(17, 24, 39);
-            border-top: 1px solid rgb(55, 65, 81);
-        }
-        .quick-btn {
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: white;
-            background-color: #6366f1;
-            border-radius: 9999px;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-        .quick-btn:hover {
-            background-color: #4f46e5;
-        }
-
-        /* Área de input */
-        .input-area {
-            padding: 1rem;
-            background-color: rgb(17, 24, 39);
-            border-top: 1px solid rgb(55, 65, 81);
-            display: flex;
-            gap: 0.5rem;
-        }
-        .input-field {
-            flex: 1;
-            padding: 0.75rem;
-            border-radius: 9999px;
-            background-color: rgb(55, 65, 81);
-            color: white;
-            border: 1px solid rgb(75, 85, 99);
-            outline: none;
-            transition: all 0.3s;
-        }
-        .input-field:focus {
-            border-color: #6366f1;
-        }
-
-        .send-btn {
-            background-color: #6366f1;
-            color: white;
-            padding: 0.75rem;
-            border-radius: 9999px;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-        .send-btn:hover {
-            background-color: #4f46e5;
-        }
-
-        /* Efeitos de digitação */
         .typing-effect::after {
             content: '|';
             animation: blink 1s step-end infinite;
@@ -180,10 +47,10 @@
 </head>
 <body class="flex items-center justify-center p-4">
 
-    <div class="chatbot-container">
+    <div class="chatbot-container bg-gray-800 rounded-xl shadow-2xl overflow-hidden backdrop-blur-md bg-opacity-70">
         
-        <div class="header">
-            <div class="icon">
+        <div class="flex items-center p-4 bg-gray-900 text-white border-b border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center mr-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -194,24 +61,24 @@
             </div>
         </div>
 
-        <div id="chatArea" class="chat-area">
-            <div class="message-row bot-message-row">
-                <div class="message-content bot-message-content">
+        <div id="chatArea" class="chat-area flex-1 p-6 overflow-y-auto bg-gray-900 text-white">
+            <div class="flex justify-start mb-4">
+                <div class="bg-indigo-600 rounded-bl-none text-white p-4 rounded-xl max-w-lg">
                     Olá! Sou sua assistente de apoio. Este é um espaço seguro onde você pode compartilhar seus sentimentos e receber orientação. Como posso te ajudar hoje? 💜
                 </div>
             </div>
         </div>
 
-        <div class="quick-options">
-            <button onclick="sendQuickMessage('Preciso de apoio emocional')" class="quick-btn">🤗 Apoio Emocional</button>
-            <button onclick="sendQuickMessage('Informações sobre meus direitos')" class="quick-btn">📚 Meus Direitos</button>
-            <button onclick="sendQuickMessage('Como buscar ajuda profissional')" class="quick-btn">👥 Buscar Ajuda</button>
-            <button onclick="sendQuickMessage('Técnicas de respiração')" class="quick-btn">🧘 Respiração</button>
+        <div class="flex flex-wrap gap-2 p-4 bg-gray-900 border-t border-gray-700">
+            <button onclick="sendQuickMessage('Preciso de apoio emocional')" class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-full hover:bg-indigo-500 transition duration-300 cursor-pointer">🤗 Apoio Emocional</button>
+            <button onclick="sendQuickMessage('Informações sobre meus direitos')" class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-full hover:bg-indigo-500 transition duration-300 cursor-pointer">📚 Meus Direitos</button>
+            <button onclick="sendQuickMessage('Como buscar ajuda profissional')" class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-full hover:bg-indigo-500 transition duration-300 cursor-pointer">👥 Buscar Ajuda</button>
+            <button onclick="sendQuickMessage('Técnicas de respiração')" class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-full hover:bg-indigo-500 transition duration-300 cursor-pointer">🧘 Respiração</button>
         </div>
 
-        <div class="input-area">
-            <input type="text" id="userInput" placeholder="Digite sua mensagem..." class="input-field" onkeypress="handleKeyPress(event)">
-            <button onclick="sendMessage()" class="send-btn">
+        <div class="p-4 bg-gray-900 border-t border-gray-700 flex space-x-2">
+            <input type="text" id="userInput" placeholder="Digite sua mensagem..." class="flex-1 p-3 rounded-full bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-indigo-500 transition-colors" onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()" class="bg-indigo-600 text-white p-3 rounded-full hover:bg-indigo-500 transition duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
@@ -223,6 +90,7 @@
     <script>
         const chatArea = document.getElementById('chatArea');
         const userInput = document.getElementById('userInput');
+        const API_KEY = "AIzaSyACzrRprwhIqduW05DvndnkrJkihy-uYAo"; // <<-- SUBSTITUA PELA SUA CHAVE AQUI
 
         const responses = {
             greetings: [
@@ -264,36 +132,32 @@
             </div>`
         };
 
-        function addMessage(message, isUser = false) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message-row ${isUser ? 'user-message-row' : 'bot-message-row'}`;
+        // Função para simular a resposta da Gemini
+        async function getGeminiResponse(userMessage) {
+            // A API da Gemini precisa de um servidor proxy para segurança. 
+            // Para testar, você pode usar um serviço como o Vercel Serverless.
+            // O código abaixo é um exemplo de como seria a chamada.
             
-            if (isUser) {
-                messageDiv.innerHTML = `<div class="message-content user-message-content">${message}</div>`;
-            } else {
-                // Efeito de digitação para a resposta do bot
-                const botMessageContent = document.createElement('div');
-                botMessageContent.className = 'message-content bot-message-content typing-effect';
-                messageDiv.appendChild(botMessageContent);
-
-                let i = 0;
-                function typeWriter() {
-                    if (i < message.length) {
-                        botMessageContent.innerHTML += message.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, 20); // Velocidade da digitação
-                    } else {
-                        botMessageContent.classList.remove('typing-effect');
-                        chatArea.scrollTop = chatArea.scrollHeight;
-                    }
-                }
-                setTimeout(typeWriter, 500); // Atraso para o bot "pensar"
-            }
-            chatArea.appendChild(messageDiv);
-            chatArea.scrollTop = chatArea.scrollHeight;
-        }
-
-        function getResponse(userMessage) {
+            // ATENÇÃO: NUNCA USE SUA CHAVE DE API DIRETAMENTE NO CÓDIGO DO CLIENTE EM PRODUÇÃO!
+            
+            // Exemplo de como a requisição seria feita (apenas para demonstração)
+            // const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({
+            //         contents: [{
+            //             parts: [{
+            //                 text: userMessage,
+            //             }],
+            //         }],
+            //     }),
+            // });
+            // const data = await response.json();
+            // return data.candidates[0].content.parts[0].text;
+            
+            // Por enquanto, vamos usar a lógica do chatbot antigo
             const msg = userMessage.toLowerCase();
             
             if (msg.includes('emergência') || msg.includes('perigo') || msg.includes('socorro') || msg.includes('me bater') || msg.includes('vai me matar') || msg.includes('ameaça')) {
@@ -323,25 +187,49 @@
             return responses.default;
         }
 
-        function sendMessage() {
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message-row ${isUser ? 'user-message-row' : 'bot-message-row'}`;
+            
+            if (isUser) {
+                messageDiv.innerHTML = `<div class="message-content user-message-content">${message}</div>`;
+            } else {
+                const botMessageContent = document.createElement('div');
+                botMessageContent.className = 'message-content bot-message-content typing-effect';
+                messageDiv.appendChild(botMessageContent);
+
+                let i = 0;
+                function typeWriter() {
+                    if (i < message.length) {
+                        botMessageContent.innerHTML += message.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 20);
+                    } else {
+                        botMessageContent.classList.remove('typing-effect');
+                        chatArea.scrollTop = chatArea.scrollHeight;
+                    }
+                }
+                setTimeout(typeWriter, 500);
+            }
+            chatArea.appendChild(messageDiv);
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+
+        async function sendMessage() {
             const message = userInput.value.trim();
             if (message === '') return;
             
             addMessage(message, true);
             userInput.value = '';
             
-            setTimeout(() => {
-                const response = getResponse(message);
-                addMessage(response, false);
-            }, 800);
+            const response = await getGeminiResponse(message);
+            addMessage(response, false);
         }
 
-        function sendQuickMessage(message) {
+        async function sendQuickMessage(message) {
             addMessage(message, true);
-            setTimeout(() => {
-                const response = getResponse(message);
-                addMessage(response, false);
-            }, 800);
+            const response = await getGeminiResponse(message);
+            addMessage(response, false);
         }
 
         function handleKeyPress(event) {
@@ -352,3 +240,4 @@
     </script>
 </body>
 </html>
+

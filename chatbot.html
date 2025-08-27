@@ -215,11 +215,13 @@
     <script>
         const chatArea = document.getElementById('chatArea');
         const userInput = document.getElementById('userInput');
-        const PROXY_URL = "https://chatbox-proxy-ey6ztwvgc-thiagoaggioias-projects.vercel.app/api";
+        // A URL do seu servidor proxy no Vercel
+        const PROXY_URL = "https://chatbox-proxy-q1mam8ull-thiagoaggioias-projects.vercel.app/api";
 
         async function getGeminiResponse(userMessage) {
-            if (!PROXY_URL || PROXY_URL.includes("URL_DO_SEU_SERVIDOR_PROXY_AQUI")) {
-                return "Desculpe, a conexão com a inteligência artificial não está configurada corretamente.";
+            if (!PROXY_URL || PROXY_URL.includes("https://chatbox-proxy-q1mam8ull-thiagoaggioias-projects.vercel.app/api")) {
+                addMessage("Desculpe, a conexão com a inteligência artificial não está configurada corretamente.", false);
+                return;
             }
 
             try {
@@ -297,6 +299,7 @@
     </script>
 </body>
 </html>
+
 
 
 
